@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+require("dotenv").config();
 
 const app = express();
 const server = require("http").createServer(app);
@@ -27,4 +28,4 @@ io.on("connection", function (socket) {
   });
 });
 
-server.listen(5000);
+server.listen(process.env.PORT);
